@@ -57,3 +57,7 @@ const task3 = simulateTask(1500);
 Promise.all([task1, task2, task3]).then((results) => {
     console.log("All tasks completed:", results);
 });
+// 7. Use Promise.race() to return whichever Promise resolves first.
+Promise.race([task1, task2, task3]).then((result) => {
+    console.log("First task completed:", result);
+});
