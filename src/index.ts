@@ -110,6 +110,14 @@ async function asyncHelloAsync() {
 }
 asyncHelloAsync();
 
+// 12. Write an async function that calls simulateTask(2000) and logs the result.
+async function callSimulateTask() {
+    const result = await simulateTask(2000);
+    console.log(result);
+}
+callSimulateTask();
+
+
 
 
 
