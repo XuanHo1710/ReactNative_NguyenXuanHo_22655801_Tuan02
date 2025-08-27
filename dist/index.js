@@ -61,3 +61,23 @@ Promise.all([task1, task2, task3]).then((results) => {
 Promise.race([task1, task2, task3]).then((result) => {
     console.log("First task completed:", result);
 });
+// 8. Create a Promise chain: square the number 2, then double it, then add 5.
+new Promise((resolve) => {
+    resolve(2);
+})
+    .then((num) => num * num) // square
+    .then((num) => num * 2) // double
+    .then((num) => num + 5) // add 5
+    .then((result) => console.log("Final result:", result));
+// 9. Write a Promise that reads an array after 1 second and filters even numbers.
+function filterEvenNumbers(arr) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const evenNumbers = arr.filter(num => num % 2 === 0);
+            resolve(evenNumbers);
+        }, 1000);
+    });
+}
+filterEvenNumbers([1, 2, 3, 4, 5, 6]).then((evenNumbers) => {
+    console.log("Even numbers:", evenNumbers);
+});
