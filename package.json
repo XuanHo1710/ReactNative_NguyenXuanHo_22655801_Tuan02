@@ -1,0 +1,14 @@
+{
+  "name": "tuan02",
+  "version": "1.0.0",
+  "main": "baitapreact.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
+}
