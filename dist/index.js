@@ -155,3 +155,8 @@ async function fetchUser(id) {
     });
 }
 fetchUser(1).then((user) => console.log("Fetched user:", user));
+// 19. Create an async function fetchUsers(ids: number[]) that calls fetchUser for each ID.
+async function fetchUsers(ids) {
+    return ids.forEach(async (id) => await fetchUser(id).then(result => console.log(result)));
+}
+fetchUsers([1, 2, 3, 4, 5, 6, 7]);
