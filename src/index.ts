@@ -180,6 +180,13 @@ async function fetchUser(id: number): Promise<User> {
 }
 fetchUser(1).then((user) => console.log("Fetched user:", user));
 
+// 19. Create an async function fetchUsers(ids: number[]) that calls fetchUser for each ID.
+function fetchUsers(ids: number[]) {
+    return ids.forEach(id => fetchUser(id));
+}
+
+fetchUsers([1, 2, 3, 4, 5, 6, 7]);
+
 
 
 
