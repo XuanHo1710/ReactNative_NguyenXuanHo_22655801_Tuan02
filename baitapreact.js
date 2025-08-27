@@ -7,3 +7,13 @@ const helloAsync = new Promise((resolve) => {
 });
 
 helloAsync.then((message) => console.log(message));
+
+// 2. Write a function that returns a Promise resolving with the number 10 after 1 second.
+function returnTen() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(10);
+        }, 1000);
+    });
+}
+returnTen().then((number) => console.log(number));
