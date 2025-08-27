@@ -177,3 +177,12 @@ async function asyncGetError() {
     }
 }
 asyncGetError();
+// C. Fetch API & Simulated I/O
+// 21. Use fetch to get data from a public API (e.g.,
+// https://jsonplaceholder.typicode.com/todos/1).
+const callFetch21 = async () => {
+    return await fetch("https://jsonplaceholder.typicode.com/todos/1")
+        .then(data => data.json())
+        .catch(error => console.log("Error for fetch" + error));
+};
+console.log(callFetch21().then(result => console.log(result)));
