@@ -123,3 +123,13 @@ async function multiplyByThree(num) {
     });
 }
 multiplyByThree(5).then((result) => console.log("5 * 3 is:", result));
+// 15. Call multiple async functions sequentially using await.
+async function sequentialCalls() {
+    const num1 = await multiplyByThree(2);
+    console.log("First call result:", num1);
+    const num2 = await multiplyByThree(num1);
+    console.log("Second call result:", num2);
+    const num3 = await multiplyByThree(num2);
+    console.log("Third call result:", num3);
+}
+sequentialCalls();
