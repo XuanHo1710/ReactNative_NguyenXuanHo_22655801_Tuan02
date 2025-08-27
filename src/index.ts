@@ -117,6 +117,17 @@ async function callSimulateTask() {
 }
 callSimulateTask();
 
+// 13. Handle errors using try/catch with async/await.
+async function asyncRandomNumber() {
+    try {
+        const num = await randomNumber();
+        console.log("Random number:", num);
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+asyncRandomNumber();
+
 
 
 
