@@ -187,6 +187,22 @@ async function fetchUsers(ids: number[]) {
 
 fetchUsers([1, 2, 3, 4, 5, 6, 7]);
 
+// 20. Add a timeout: if the API call takes more than 2 seconds, throw an error.
+async function throwError() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject("So slow na");
+        }, 2000);
+    });
+}
+async function asyncGetError() {
+    try {
+        const num = await throwError();
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+asyncGetError();
 
 
 
