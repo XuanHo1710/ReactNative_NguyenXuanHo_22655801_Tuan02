@@ -25,3 +25,18 @@ function rejects() {
     });
 }
 rejects().catch(error => console.log(error));
+// 4. Use .then() and .catch() to handle a Promise that returns a random number.
+function randomNumber() {
+    return new Promise((resolve, reject) => {
+        const num = Math.random();
+        if (num > 0.5) {
+            resolve(num);
+        }
+        else {
+            reject("Number is less than 0.5");
+        }
+    });
+}
+randomNumber()
+    .then((num) => console.log("Random number:", num))
+    .catch((error) => console.log("Error:", error));
