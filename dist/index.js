@@ -114,3 +114,12 @@ async function asyncRandomNumber() {
     }
 }
 asyncRandomNumber();
+// 14. Write an async function that takes a number, waits 1 second, and returns the number × 3.
+async function multiplyByThree(num) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(num * 3);
+        }, 1000);
+    });
+}
+multiplyByThree(5).then((result) => console.log("5 * 3 is:", result));
