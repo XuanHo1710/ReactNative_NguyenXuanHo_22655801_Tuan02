@@ -40,3 +40,13 @@ function randomNumber() {
 randomNumber()
     .then((num) => console.log("Random number:", num))
     .catch((error) => console.log("Error:", error));
+// 5. Create a function simulateTask(time) that returns a Promise resolving with "Task
+// done" after time ms.
+function simulateTask(time) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Task done");
+        }, time);
+    });
+}
+simulateTask(1500).then((message) => console.log(message));
