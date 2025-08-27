@@ -156,6 +156,15 @@ async function parallelCalls() {
 }
 parallelCalls();
 
+// 17. Use for await...of to iterate over an array of Promises.
+async function forAwaitOfExample() {
+    const promises = [multiplyByThree(1), multiplyByThree(2), multiplyByThree(3)];
+    for await (const result of promises) {
+        console.log("Result from for await...of:", result);
+    }
+}
+forAwaitOfExample();
+
 
 
 
