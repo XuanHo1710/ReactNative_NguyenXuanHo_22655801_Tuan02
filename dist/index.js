@@ -81,3 +81,19 @@ function filterEvenNumbers(arr) {
 filterEvenNumbers([1, 2, 3, 4, 5, 6]).then((evenNumbers) => {
     console.log("Even numbers:", evenNumbers);
 });
+// 10. Use .finally() to log "Done" when a Promise finishes (success or failure).
+randomNumber()
+    .then((num) => console.log("Random number:", num))
+    .catch((error) => console.log("Error:", error))
+    .finally(() => console.log("Done"));
+// B. Async/Await
+// 11. Convert Exercise 1 into async/await.
+async function asyncHelloAsync() {
+    const message = await new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Hello Async");
+        }, 2000);
+    });
+    console.log(message);
+}
+asyncHelloAsync();
