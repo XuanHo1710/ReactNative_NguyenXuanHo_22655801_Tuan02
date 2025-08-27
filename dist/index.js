@@ -231,3 +231,13 @@ const postData = async () => {
     }
 };
 postData();
+// 25. Create a function downloadFile that simulates downloading a file in 3 seconds and logs
+// when done.
+function downloadFile() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("File downloaded");
+        }, 3000);
+    });
+}
+downloadFile().then((message) => console.log(message));
