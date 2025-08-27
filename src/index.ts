@@ -149,6 +149,12 @@ async function sequentialCalls() {
 }
 sequentialCalls();
 
+// 16. Call multiple async functions in parallel using Promise.all().
+async function parallelCalls() {
+    const results = await Promise.all([multiplyByThree(2), multiplyByThree(3), multiplyByThree(4)]);
+    console.log("Parallel call results:", results);
+}
+parallelCalls();
 
 
 
