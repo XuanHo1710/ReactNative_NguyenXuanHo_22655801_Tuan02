@@ -280,6 +280,29 @@ async function waitFiveSeconds() {
 }
 waitFiveSeconds();
 
+// 27. Write a function fetchWithRetry(url, retries) that retries up to retries times if
+// the API call fails.
+async function fetchWithRetry(url: string, retries: number) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.log(`Attempt ${i + 1} failed: ${error}`);
+            if (i === retries - 1) {
+                throw new Error("All retries failed");
+            }
+        }
+    }
+}
+fetchWithRetry("https://jsonplaceholder.typicode.com/todos/1", 3)
+    .then((data) => console.log("Fetched with retry:", data))
+    .catch((error) => console.log("Final error:", error));
+
 
 
 
