@@ -147,3 +147,11 @@ async function forAwaitOfExample() {
     }
 }
 forAwaitOfExample();
+async function fetchUser(id) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({ id, name: `User${id}` });
+        }, 1000);
+    });
+}
+fetchUser(1).then((user) => console.log("Fetched user:", user));

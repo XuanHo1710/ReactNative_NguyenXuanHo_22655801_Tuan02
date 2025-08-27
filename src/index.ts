@@ -165,6 +165,21 @@ async function forAwaitOfExample() {
 }
 forAwaitOfExample();
 
+// 18. Write an async function fetchUser(id) that simulates an API call (resolves a user
+// object after 1 second).
+interface User {
+    id: number;
+    name: string;
+}
+async function fetchUser(id: number): Promise<User> {
+    return new Promise<User>((resolve) => {
+        setTimeout(() => {
+            resolve({ id, name: `User${id}` });
+        }, 1000);
+    });
+}
+fetchUser(1).then((user) => console.log("Fetched user:", user));
+
 
 
 
