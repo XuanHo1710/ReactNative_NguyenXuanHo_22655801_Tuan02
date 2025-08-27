@@ -186,3 +186,12 @@ const callFetch21 = async () => {
         .catch(error => console.log("Error for fetch" + error));
 };
 console.log(callFetch21().then(result => console.log(result)));
+// 22. Call the API multiple times and log the results.
+const callFetch22 = async (id) => {
+    return await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+        .then(data => data.json())
+        .catch(error => console.log("Error for fetch" + error));
+};
+for (let i = 1; i <= 5; i++) {
+    callFetch22(i).then(result => console.log(result));
+}
