@@ -226,6 +226,20 @@ for (let i = 1; i <= 5; i++) {
     callFetch22(i).then(result => console.log(result));
 }
 
+// 23. Write an async function that fetches a list of todos and filters out those that are not
+// completed.
+const fetchAndFilterTodos = async () => {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+        const todos = await response.json();
+        const completedTodos = todos.filter((todo: { completed: boolean }) => todo.completed);
+        console.log("Completed Todos:", completedTodos);
+    } catch (error) {
+        console.log("Error fetching todos:", error);
+    }
+};
+fetchAndFilterTodos();
+
 
 
 
