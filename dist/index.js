@@ -209,3 +209,25 @@ const fetchAndFilterTodos = async () => {
     }
 };
 fetchAndFilterTodos();
+// 24. Write an async function postData() that sends a POST request to a test API.
+const postData = async () => {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: 'foo',
+                body: 'bar',
+                userId: 1,
+            })
+        });
+        const data = await response.json();
+        console.log("Posted Data:", data);
+    }
+    catch (error) {
+        console.log("Error posting data:", error);
+    }
+};
+postData();
